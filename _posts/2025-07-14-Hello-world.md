@@ -2,7 +2,7 @@
 layout: post
 title: Hello World
 subtitle: First post to see if this website work
-cover-img: /assets/img/path.jpg
+cover-img: www.dancehallreggae.com.au/wp-content/uploads/2018/07/1530671697_600x600bb.jpg
 thumbnail-img: https://www.dancehallreggae.com.au/wp-content/uploads/2018/07/1530671697_600x600bb.jpg
 share-img: /assets/img/path.jpg
 tags: [books, test]
