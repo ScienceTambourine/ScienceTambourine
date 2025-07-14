@@ -2,8 +2,8 @@
 layout: post
 title: Hello World
 subtitle: First post to see if this website work
-cover-img:
-thumbnail-img:
+cover-img: /assets/img/path.jpg
+thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
 tags: [books, test]
 author: Anandi Tamby
