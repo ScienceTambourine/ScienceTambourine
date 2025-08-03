@@ -32,7 +32,7 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/avatar-icon.png"
+avatar: "https://64.media.tumblr.com/1081f848dc5bd4a27ee5c9ad91e35f31/a5c2722ec71e5b9a-88/s1280x1920/03f84fb13d5077af85355d22caffe177f17861d6.jpg"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
