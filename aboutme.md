@@ -3,7 +3,7 @@ layout: page
 title: About me
 subtitle: What we're doing here
 ---
-
+![Avatar]([https://beautifuljekyll.com/assets/img/crepe.jpg](https://64.media.tumblr.com/1081f848dc5bd4a27ee5c9ad91e35f31/a5c2722ec71e5b9a-88/s1280x1920/03f84fb13d5077af85355d22caffe177f17861d6.jpg)){: .mx-auto.d-block :}
 I am Anandi Tamby, a marine microbiologist. I am passionate about nature and the environment. I'll use this blog to bridge science and political issues. 
 
 What else do you need?
