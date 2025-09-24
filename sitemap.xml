@@ -1,27 +1,26 @@
 ---
 layout: null
-search: exclude
+
 ---
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://sciencetambourine.github.io/ScienceTambourine/">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    {% for page in site.pages %}
-    <url>
-        <loc>{{page.url}}</loc>
-        <lastmod>{{site.time | date: '%Y-%m-%d' }}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    {% endfor %}
+  {% for page in site.pages %}
+  {% if page.sitemap != false %}
+  <url>
+    <loc>{{ site.url }}{{ page.url | replace:'index.html','' }}</loc>
+    <lastmod>{{ page.date | default: site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  {% endif %}
+  {% endfor %}
 
-    {% for post in site.posts %}
-    <url>
-        <loc>{{post.url}}</loc>
-        <lastmod>{{site.time | date: '%Y-%m-%d' }}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    {% endfor %}
-
-</urlset>
+  {% for post in site.posts %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
