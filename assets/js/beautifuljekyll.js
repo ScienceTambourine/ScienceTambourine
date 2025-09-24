@@ -1,3 +1,7 @@
+---
+sitemap: false
+---
+  
 // Dean Attali / Beautiful Jekyll 2023
 
 let BeautifulJekyllJS = {
