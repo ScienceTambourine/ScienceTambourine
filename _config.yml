@@ -15,6 +15,9 @@ title: Science Tambourine
 # Your name to show in the footer
 author: Anandi Tamby
 
+npm install hexo-generator-sitemap --save
+sitemap:
+  path: sitemap.xml
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################
