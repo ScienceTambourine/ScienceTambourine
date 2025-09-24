@@ -1,14 +1,18 @@
 ---
 layout: null
+sitemap: false
 ---
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  {%- comment -%} Include pages {%- endcomment -%}
   {% for page in site.pages %}
-    {% if page.sitemap != false %}
+    {% assign page_url = page.url | replace:'index.html','' %}
+    {% assign page_ext = page_url | split: '.' | last %}
+    {% if page.sitemap != false and page_ext == '' %}
     <url>
-      <loc>{{ site.url }}{{ page.url | replace:'index.html','' }}</loc>
+      <loc>{{ site.url }}{{ page_url }}</loc>
       <lastmod>{{ page.date | default: site.time | date_to_xmlschema }}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
@@ -16,13 +20,16 @@ layout: null
     {% endif %}
   {% endfor %}
 
+  {%- comment -%} Include posts {%- endcomment -%}
   {% for post in site.posts %}
-  <url>
-    <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+    {% if post.sitemap != false %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    {% endif %}
   {% endfor %}
 
 </urlset>
