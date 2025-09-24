@@ -1,22 +1,27 @@
 ---
 layout: null
-
 ---
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  {% comment %}
+  Include all pages except ones explicitly excluded with 'sitemap: false'
+  {% endcomment %}
   {% for page in site.pages %}
-  {% if page.sitemap != false %}
-  <url>
-    <loc>{{ site.url }}{{ page.url | replace:'index.html','' }}</loc>
-    <lastmod>{{ page.date | default: site.time | date_to_xmlschema }}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  {% endif %}
+    {% if page.sitemap != false %}
+    <url>
+      <loc>{{ site.url }}{{ page.url | replace:'index.html','' }}</loc>
+      <lastmod>{{ page.date | default: site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    {% endif %}
   {% endfor %}
 
+  {% comment %}
+  Include all posts
+  {% endcomment %}
   {% for post in site.posts %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
@@ -24,3 +29,6 @@ layout: null
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  {% endfor %}
+
+</urlset>
